@@ -48,6 +48,10 @@ use Facebook\FacebookCanvasLoginHelper;
 			}
 
 		}
+		else
+		{
+			echo("no session ...\n");
+		}
 
 			echo($sentence);
 ?>
