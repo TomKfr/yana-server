@@ -9,6 +9,13 @@
 */
 
 define('VOCALINFO_COMMAND_FILE','cmd.json');
+define('FACEBOOK_SDK_V4_SRC_DIR', '/Facebook');
+require __DIR__ . '/autoload.php';
+
+use Facebook\FacebookSession;
+use Facebook\FacebookRequest;
+use Facebook\GraphUser;
+use Facebook\FacebookRequestException;
 
 function vocalinfo_vocal_command(&$response,$actionUrl){
 	global $conf;
@@ -348,13 +355,6 @@ function vocalinfo_action(){
 
 			$sentence = "Phrase de base ...";
 
-			define('FACEBOOK_SDK_V4_SRC_DIR', '/Facebook/');
-			require __DIR__ . '/autoload.php';
-
-			use Facebook\FacebookSession;
-			use Facebook\FacebookRequest;
-			use Facebook\GraphUser;
-			use Facebook\FacebookRequestException;
 
 			FacebookSession::setDefaultApplication('944393428906526','3c360d7d962d47fccd2d84dcb2c10273');
 
