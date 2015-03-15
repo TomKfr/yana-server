@@ -2,7 +2,7 @@
 
 
 define('FACEBOOK_SDK_V4_SRC_DIR', '/Facebook');
-require_once('autoload.php');
+require __DIR__ . '/autoload.php';
 // require_once( 'Facebook/FacebookSession.php' );
 // require_once( 'Facebook/FacebookRedirectLoginHelper.php' );
 // require_once( 'Facebook/FacebookRequest.php' );
