@@ -4,10 +4,10 @@
 define('FACEBOOK_SDK_V4_SRC_DIR', '/Facebook');
 require __DIR__ . '/autoload.php';
 
-use Facebook\FacebookSession;
-			use Facebook\FacebookRequest;
-			use Facebook\GraphUser;
-			use Facebook\FacebookRequestException;
+use Facebook/FacebookSession;
+			use Facebook/FacebookRequest;
+			use Facebook/GraphUser;
+			use Facebook/FacebookRequestException;
 
 			$sentence = "Phrase de base ...";
 
