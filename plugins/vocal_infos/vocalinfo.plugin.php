@@ -9,8 +9,8 @@
 */
 
 define('VOCALINFO_COMMAND_FILE','cmd.json');
-define('FACEBOOK_SDK_V4_SRC_DIR', '/Facebook');
-require __DIR__ . '/autoload.php';
+//define('FACEBOOK_SDK_V4_SRC_DIR', '/Facebook');
+//require __DIR__ . '/autoload.php';
 
 function vocalinfo_vocal_command(&$response,$actionUrl){
 	global $conf;
