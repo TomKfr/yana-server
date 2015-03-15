@@ -348,10 +348,10 @@ function vocalinfo_action(){
 		case 'vocalinfo_facebook':
 			global $_;
 
-			use Facebook\FacebookSession;
-			use Facebook\FacebookRequest;
-			use Facebook\GraphUser;
-			use Facebook\FacebookRequestException;
+			//use Facebook\FacebookSession;
+			//use Facebook\FacebookRequest;
+			//use Facebook\GraphUser;
+			//use Facebook\FacebookRequestException;
 
 			$sentence = "Phrase de base ...";
 
