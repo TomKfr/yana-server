@@ -343,6 +343,16 @@ function vocalinfo_action(){
 				$json = json_encode($response);
 				echo ($json=='[]'?'{}':$json);
 		break;
+		case 'vocalinfo_facebook':
+			global $_;
+				$sentence = "Vous avez 2 notifications non vues sur Facebook";
+				$response = array('responses'=>array(
+										array('type'=>'talk','sentence'=>$affirmation)
+													)
+								);
+				$json = json_encode($response);
+				echo ($json=='[]'?'{}':$json);
+		break;
 	}
 
 }
