@@ -4,6 +4,7 @@
 define('FACEBOOK_SDK_V4_SRC_DIR', '/Facebook');
 require __DIR__ . '/Facebook/autoload.php';
  require_once( 'Facebook/FacebookSession.php' );
+ require_once( 'Facebook/Entities/AccessToken.php' );
 // require_once( 'Facebook/FacebookRedirectLoginHelper.php' );
 // require_once( 'Facebook/FacebookRequest.php' );
 // require_once( 'Facebook/FacebookResponse.php' );
