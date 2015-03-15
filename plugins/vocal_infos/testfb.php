@@ -13,6 +13,7 @@ require __DIR__ . '/Facebook/autoload.php';
  require_once( 'Facebook/FacebookAuthorizationException.php' );
  require_once( 'Facebook/GraphObject.php' );
  require_once( 'Facebook/GraphUser.php' );
+ require_once( 'Facebook/HttpClients/FacebookStreamHttpClient.php');
 
 use Facebook\FacebookSession;
 			use Facebook\FacebookRequest;
