@@ -8,6 +8,7 @@ use Facebook\FacebookSession;
 use Facebook\FacebookRequest;
 use Facebook\GraphUser;
 use Facebook\FacebookRequestException;
+use Facebook\FacebookCanvasLoginHelper;
 
 			$sentence = "Phrase de base ...";
 
@@ -19,7 +20,19 @@ use Facebook\FacebookRequestException;
 			//   FacebookCanvasLoginHelper
 			//   FacebookJavaScriptLoginHelper
 			// or create a FacebookSession with a valid access token:
-			$session = new FacebookSession('17fc188b32f067857b9ed93d3cf278b2');
+			//$session = new FacebookSession('17fc188b32f067857b9ed93d3cf278b2');
+
+			$helper = new FacebookCanvasLoginHelper();
+			try {
+			  $session = $helper->getSession();
+			} catch(FacebookRequestException $ex) {
+			  $sentence = $ex->getMessage()."\n";
+			} catch(\Exception $ex) {
+			  $sentence = $ex->getMessage()."\n";
+			}
+			if ($session) {
+			  // Logged in
+			
 
 			// Get the GraphUser object for the current user:
 
@@ -29,10 +42,12 @@ use Facebook\FacebookRequestException;
 			  ))->execute()->getGraphObject(GraphUser::className());
 			  echo $me->getName();
 			} catch (FacebookRequestException $e) {
-			  $sentence = $e->getMessage();
+			  $sentence = $e->getMessage()."\n";
 			} catch (\Exception $e) {
 			  $sentence = "Erreur inconnue";
 			}
+
+		}
 
 			echo($sentence);
 ?>
