@@ -12,10 +12,10 @@ require_once( 'Facebook/FacebookAuthorizationException.php' );
 require_once( 'Facebook/GraphObject.php' );
 require_once( 'Facebook/GraphUser.php' );
 
-use Facebook/FacebookSession;
-			use Facebook/FacebookRequest;
-			use Facebook/GraphUser;
-			use Facebook/FacebookRequestException;
+use Facebook\FacebookSession;
+			use Facebook\FacebookRequest;
+			use Facebook\GraphUser;
+			use Facebook\FacebookRequestException;
 
 			$sentence = "Phrase de base ...";
 
