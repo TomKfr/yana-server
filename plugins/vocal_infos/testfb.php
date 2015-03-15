@@ -1,7 +1,7 @@
 <?php
 
 
-define('FACEBOOK_SDK_V4_SRC_DIR', '/Facebook');
+define('FACEBOOK_SDK_V4_SRC_DIR', '/');
 require __DIR__ . '/autoload.php';
  /*require_once( 'Facebook/FacebookSession.php' );
  require_once( 'Facebook/Entities/AccessToken.php' );
