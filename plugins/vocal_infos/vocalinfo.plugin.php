@@ -347,7 +347,7 @@ function vocalinfo_action(){
 			global $_;
 				$sentence = "Vous avez 2 notifications non vues sur Facebook";
 				$response = array('responses'=>array(
-										array('type'=>'talk','sentence'=>$affirmation)
+										array('type'=>'talk','sentence'=>$sentence)
 													)
 								);
 				$json = json_encode($response);
