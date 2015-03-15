@@ -1,9 +1,9 @@
 <?php
 
 
-//define('FACEBOOK_SDK_V4_SRC_DIR', '/');
+define('FACEBOOK_SDK_V4_SRC_DIR', '/');
 require __DIR__ . '/autoload.php';
- /*require_once( 'Facebook/FacebookSession.php' );
+ require_once( 'Facebook/FacebookSession.php' );
  require_once( 'Facebook/Entities/AccessToken.php' );
  require_once( 'Facebook/FacebookRedirectLoginHelper.php' );
  require_once( 'Facebook/FacebookRequest.php' );
@@ -14,7 +14,7 @@ require __DIR__ . '/autoload.php';
  require_once( 'Facebook/GraphObject.php' );
  require_once( 'Facebook/GraphUser.php' );
  require_once( 'Facebook/HttpClients/FacebookStreamHttpClient.php');
- require_once( 'Facebook/HttpClients/FacebookHttpable.php');*/
+ require_once( 'Facebook/HttpClients/FacebookHttpable.php');
 
 use Facebook\FacebookSession;
 			use Facebook\FacebookRequest;
