@@ -14,6 +14,7 @@ require __DIR__ . '/Facebook/autoload.php';
  require_once( 'Facebook/GraphObject.php' );
  require_once( 'Facebook/GraphUser.php' );
  require_once( 'Facebook/HttpClients/FacebookStreamHttpClient.php');
+ require_once( 'Facebook/HttpClients/FacebookHttpable.php');
 
 use Facebook\FacebookSession;
 			use Facebook\FacebookRequest;
