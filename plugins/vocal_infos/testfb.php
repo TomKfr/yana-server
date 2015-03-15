@@ -29,7 +29,7 @@ use Facebook\FacebookRequestException;
 			  ))->execute()->getGraphObject(GraphUser::className());
 			  echo $me->getName();
 			} catch (FacebookRequestException $e) {
-			  $sentence = "Erreur de l'api graph";
+			  $sentence = $e->getMessage();
 			} catch (\Exception $e) {
 			  $sentence = "Erreur inconnue";
 			}
