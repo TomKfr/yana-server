@@ -12,11 +12,6 @@ define('VOCALINFO_COMMAND_FILE','cmd.json');
 define('FACEBOOK_SDK_V4_SRC_DIR', '/Facebook');
 require __DIR__ . '/autoload.php';
 
-use Facebook\FacebookSession;
-use Facebook\FacebookRequest;
-use Facebook\GraphUser;
-use Facebook\FacebookRequestException;
-
 function vocalinfo_vocal_command(&$response,$actionUrl){
 	global $conf;
 
@@ -352,6 +347,11 @@ function vocalinfo_action(){
 		break;
 		case 'vocalinfo_facebook':
 			global $_;
+
+			use Facebook\FacebookSession;
+			use Facebook\FacebookRequest;
+			use Facebook\GraphUser;
+			use Facebook\FacebookRequestException;
 
 			$sentence = "Phrase de base ...";
 
