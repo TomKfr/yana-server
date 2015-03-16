@@ -26,11 +26,6 @@ use Facebook\FacebookCanvasLoginHelper;
 			// Get the GraphUser object for the current user:
 
 			try {
-			  $me = (new FacebookRequest(
-			    $session, 'GET', '/me'
-			  ))->execute()->getGraphObject(GraphUser::className());
-			  echo $me->getName();
-			  echo '\n';
 
 			  $request = new FacebookRequest(
 				$session,
@@ -40,7 +35,7 @@ use Facebook\FacebookCanvasLoginHelper;
 				$response = $request->execute();
 				$graphObject = $response->getGraphObject();
 
-				$notifications = $graphObject->getPropertyNames();
+				$notifications = $graphObject->getProperty('summary');
 				foreach($notifications as $prop){
 					echo $prop."\n";
 				}
