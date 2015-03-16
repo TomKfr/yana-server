@@ -10,7 +10,7 @@ use Facebook\GraphUser;
 use Facebook\FacebookRequestException;
 use Facebook\FacebookCanvasLoginHelper;
 
-			$sentence = "Phrase de base ...";
+			$sentence = "Phrase de base ...\n";
 
 
 			FacebookSession::setDefaultApplication('944393428906526','3c360d7d962d47fccd2d84dcb2c10273');
@@ -40,9 +40,9 @@ use Facebook\FacebookCanvasLoginHelper;
 				$response = $request->execute();
 				$graphObject = $response->getGraphObject();
 
-				$notifications = $graphObject->asArray();
+				$notifications = $graphObject->getProperty('unseen_count');
 				echo $notifications;
-				echo '\n';
+				echo "\n";
 
 			} catch (FacebookRequestException $e) {
 			  $sentence = $e->getMessage()."\n";
