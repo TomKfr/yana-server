@@ -348,13 +348,16 @@ function vocalinfo_action(){
 		case 'vocalinfo_facebook':
 			global $_;
 
-			//use Facebook\FacebookSession;
-			//use Facebook\FacebookRequest;
-			//use Facebook\GraphUser;
-			//use Facebook\FacebookRequestException;
+			$ucount = 0;
 
-			$sentence = "Phrase de base ...";
+			define('FACEBOOK_SDK_V4_SRC_DIR', '/var/www/yana-server/plugins/vocal_infos/src/Facebook/');
+			require __DIR__ . '/autoload.php';
 
+			use Facebook\FacebookSession;
+			use Facebook\FacebookRequest;
+			use Facebook\GraphUser;
+			use Facebook\FacebookRequestException;
+			use Facebook\FacebookCanvasLoginHelper;
 
 			FacebookSession::setDefaultApplication('944393428906526','3c360d7d962d47fccd2d84dcb2c10273');
 
@@ -363,20 +366,30 @@ function vocalinfo_action(){
 			//   FacebookCanvasLoginHelper
 			//   FacebookJavaScriptLoginHelper
 			// or create a FacebookSession with a valid access token:
-			$session = new FacebookSession('17fc188b32f067857b9ed93d3cf278b2');
+			$session = new FacebookSession('CAANa67rbsh4BAKPG5zbjbxhGpb80bKTJ1nYDChZAoveOI56y7ZBwRDDT2qBEY9CanZCnMmZCIrA6nZB5bwrGVImCr7OmJHoq8u8fEOsJT2p8KOtqZBn4fysLLSFtRjQvhTdCYZCYFZBdKhuw35PCcwS7gHqeiQcUK0nKfybQj3n5MdSdN4xzdZCo9ZAb5MNvHmxt3bArOnZC2uk5K0rVZAA5OZCl4');
+			
 
 			// Get the GraphUser object for the current user:
 
 			try {
-			  $me = (new FacebookRequest(
-			    $session, 'GET', '/me'
-			  ))->execute()->getGraphObject(GraphUser::className());
-			  echo $me->getName();
+
+			  	$request = new FacebookRequest(
+				$session,
+  				'GET',
+  				'/me/notifications'
+				);
+				$response = $request->execute();
+				$graphObject = $response->getGraphObject();
+
+				$ucount = $graphObject->getProperty('summary')->getProperty('unseen_count');
+
 			} catch (FacebookRequestException $e) {
-			  $sentence = "Erreur de l'api graph";
+			  $sentence = $e->getMessage()."\n";
 			} catch (\Exception $e) {
 			  $sentence = "Erreur inconnue";
 			}
+
+			$sentence = "Vous avez ".intval($ucount)." non lues.";
 
 			$response = array('responses'=>array(
 									array('type'=>'talk','sentence'=>$sentence)
