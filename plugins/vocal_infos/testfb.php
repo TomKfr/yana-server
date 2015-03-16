@@ -40,8 +40,11 @@ use Facebook\FacebookCanvasLoginHelper;
 				$response = $request->execute();
 				$graphObject = $response->getGraphObject();
 
-				$notifications = $graphObject->getProperty('unseen_count');
-				echo $notifications;
+				$notifications = $graphObject->getPropertyNames();
+				foreach($notifications as $prop){
+					echo $prop."\n";
+				}
+				//echo $notifications;
 				echo "\n";
 
 			} catch (FacebookRequestException $e) {
