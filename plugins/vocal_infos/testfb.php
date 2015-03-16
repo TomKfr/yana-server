@@ -30,6 +30,20 @@ use Facebook\FacebookCanvasLoginHelper;
 			    $session, 'GET', '/me'
 			  ))->execute()->getGraphObject(GraphUser::className());
 			  echo $me->getName();
+			  echo '\n';
+
+			  $request = new FacebookRequest(
+				$session,
+  				'GET',
+  				'/me/notifications'
+				);
+				$response = $request->execute();
+				$graphObject = $response->getGraphObject();
+
+				$notifications = $graphObject->asArray();
+				echo $notifications;
+				echo '\n';
+
 			} catch (FacebookRequestException $e) {
 			  $sentence = $e->getMessage()."\n";
 			} catch (\Exception $e) {
