@@ -389,7 +389,7 @@ function vocalinfo_action(){
 			  $sentence = "Erreur inconnue";
 			}
 
-			$sentence = "Vous avez ".intval($ucount)." non lues.";
+			$sentence = "Vous avez ".intval($ucount)." notifications non lues.";
 
 			$response = array('responses'=>array(
 									array('type'=>'talk','sentence'=>$sentence)
