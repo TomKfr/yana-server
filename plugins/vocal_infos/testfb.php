@@ -35,7 +35,7 @@ use Facebook\FacebookCanvasLoginHelper;
 				$response = $request->execute();
 				$graphObject = $response->getGraphObject();
 
-				$notifications = $graphObject->getProperty('summary');
+				$notifications = $graphObject->getPropertyAsArray('summary');
 				foreach($notifications as $prop){
 					echo $prop."\n";
 				}
