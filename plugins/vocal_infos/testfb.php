@@ -39,7 +39,7 @@ use Facebook\FacebookCanvasLoginHelper;
 				/*foreach($notifications as $prop){
 					echo $prop."\n";
 				}*/
-				echo $notifications->unseen_count;
+				echo $notifications;
 				echo "\n";
 
 			} catch (FacebookRequestException $e) {
