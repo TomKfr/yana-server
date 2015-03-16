@@ -20,18 +20,7 @@ use Facebook\FacebookCanvasLoginHelper;
 			//   FacebookCanvasLoginHelper
 			//   FacebookJavaScriptLoginHelper
 			// or create a FacebookSession with a valid access token:
-			//$session = new FacebookSession('17fc188b32f067857b9ed93d3cf278b2');
-
-			$helper = new FacebookCanvasLoginHelper();
-			try {
-			  $session = $helper->getSession();
-			} catch(FacebookRequestException $ex) {
-			  $sentence = $ex->getMessage()."\n";
-			} catch(\Exception $ex) {
-			  $sentence = $ex->getMessage()."\n";
-			}
-			if ($session) {
-			  // Logged in
+			$session = new FacebookSession('CAACEdEose0cBAN3DldwhJ2uM0i8UGv6uDNdkgE3z44H54yKRB8vEZB7OZCrIVSCninhVN14nWaTn31qE9inlGfgibZAoOF22wo3m2fpTQOjVvCEq7qC1lJMGE3LiqpOu8zmtayxzFtRbGR3k3xthhrJNyZC8h1P86EJjcWWSLra8395b6nNsGcNZC23ZBclFtnBS73xCdYR7NSLoZA3ptKu');
 			
 
 			// Get the GraphUser object for the current user:
@@ -47,11 +36,6 @@ use Facebook\FacebookCanvasLoginHelper;
 			  $sentence = "Erreur inconnue";
 			}
 
-		}
-		else
-		{
-			echo("no session ...\n");
-		}
 
 			echo($sentence);
 ?>
