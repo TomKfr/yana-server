@@ -9,8 +9,14 @@
 */
 
 define('VOCALINFO_COMMAND_FILE','cmd.json');
-//define('FACEBOOK_SDK_V4_SRC_DIR', '/Facebook');
-//require __DIR__ . '/autoload.php';
+define('FACEBOOK_SDK_V4_SRC_DIR', '/var/www/yana-server/plugins/vocal_infos/src/Facebook/');
+require __DIR__ . '/autoload.php';
+
+use Facebook\FacebookSession;
+use Facebook\FacebookRequest;
+use Facebook\GraphUser;
+use Facebook\FacebookRequestException;
+use Facebook\FacebookCanvasLoginHelper;
 
 function vocalinfo_vocal_command(&$response,$actionUrl){
 	global $conf;
@@ -349,15 +355,6 @@ function vocalinfo_action(){
 			global $_;
 
 			$ucount = 0;
-
-			define('FACEBOOK_SDK_V4_SRC_DIR', '/var/www/yana-server/plugins/vocal_infos/src/Facebook/');
-			require __DIR__ . '/autoload.php';
-
-			use Facebook\FacebookSession;
-			use Facebook\FacebookRequest;
-			use Facebook\GraphUser;
-			use Facebook\FacebookRequestException;
-			use Facebook\FacebookCanvasLoginHelper;
 
 			FacebookSession::setDefaultApplication('944393428906526','3c360d7d962d47fccd2d84dcb2c10273');
 
