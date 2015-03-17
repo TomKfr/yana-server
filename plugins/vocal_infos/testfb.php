@@ -37,7 +37,7 @@ use Facebook\FacebookCanvasLoginHelper;
 				$graphObject = $response->getGraphObject();
 
 				$ucount = $graphObject->getProperty('summary')->getProperty('unseen_count');
-				echo $graphObject->getProperty('summary')->getProperty('unseen_count')."\n";
+				echo "Notifications non lues : ".$graphObject->getProperty('summary')->getProperty('unseen_count')."\n";
 
 			} catch (FacebookRequestException $e) {
 			  $sentence = $e->getMessage()."\n";
@@ -45,7 +45,7 @@ use Facebook\FacebookCanvasLoginHelper;
 			  $sentence = "Erreur inconnue";
 			}
 
-			$sentence = "Vous avez ".intval($ucount)." non lues.";
+			$sentence = "Vous avez ".intval($ucount)." notifications non lues.";
 			echo $sentence;
 
 ?>
