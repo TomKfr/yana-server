@@ -24,15 +24,18 @@ use Facebook\FacebookCanvasLoginHelper;
 			
 			$ucount = 0;
 
-			// Get the GraphUser object for the current user:
-
 			try {
 
-			  $request = new FacebookRequest(
+				echo "step 1 \n";
+
+			  	$request = new FacebookRequest(
 				$session,
   				'GET',
   				'/me/notifications'
 				);
+
+			  	echo "step 2 \n";
+
 				$response = $request->execute();
 				$graphObject = $response->getGraphObject();
 
@@ -45,7 +48,7 @@ use Facebook\FacebookCanvasLoginHelper;
 			  $sentence = "Erreur inconnue";
 			}
 
-			$sentence = "Vous avez ".intval($ucount)." notifications non lues.";
+			$sentence = "Vous avez ".intval($ucount)." notifications non lues.\n";
 			echo $sentence;
 
 ?>
