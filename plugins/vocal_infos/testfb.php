@@ -20,7 +20,7 @@ use Facebook\FacebookCanvasLoginHelper;
 			//   FacebookCanvasLoginHelper
 			//   FacebookJavaScriptLoginHelper
 			// or create a FacebookSession with a valid access token:
-			$session = new FacebookSession('CAANa67rbsh4BAKPG5zbjbxhGpb80bKTJ1nYDChZAoveOI56y7ZBwRDDT2qBEY9CanZCnMmZCIrA6nZB5bwrGVImCr7OmJHoq8u8fEOsJT2p8KOtqZBn4fysLLSFtRjQvhTdCYZCYFZBdKhuw35PCcwS7gHqeiQcUK0nKfybQj3n5MdSdN4xzdZCo9ZAb5MNvHmxt3bArOnZC2uk5K0rVZAA5OZCl4');
+			$session = new FacebookSession('CAANa67rbsh4BACHJlVWBpOWL6TZA0ZAkjtC7qb9opqAq1tZBrMJNs7nHZAHtRAZBQDkUxX70VRgBunmkJyVcHyxLba1fJsjAotoDUGmT71ZCeGUxm8RNCxIdBN3zmswiEdi3xRGOkELbm1CK5At00XmlPOSnU3E1pwJBBRczta9XP4vQ79YpNkW3zacyQ0JnL5FZCdE7ZBgh1ZA94MYquZA4DM');
 			
 			$ucount = 0;
 
