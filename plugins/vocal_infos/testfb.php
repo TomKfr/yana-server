@@ -20,13 +20,11 @@ use Facebook\FacebookCanvasLoginHelper;
 			//   FacebookCanvasLoginHelper
 			//   FacebookJavaScriptLoginHelper
 			// or create a FacebookSession with a valid access token:
-			$session = new FacebookSession('CAANa67rbsh4BACHJlVWBpOWL6TZA0ZAkjtC7qb9opqAq1tZBrMJNs7nHZAHtRAZBQDkUxX70VRgBunmkJyVcHyxLba1fJsjAotoDUGmT71ZCeGUxm8RNCxIdBN3zmswiEdi3xRGOkELbm1CK5At00XmlPOSnU3E1pwJBBRczta9XP4vQ79YpNkW3zacyQ0JnL5FZCdE7ZBgh1ZA94MYquZA4DM');
+			$session = new FacebookSession('CAANa67rbsh4BAGpi7lsldHmrDT4vk50PYOa9hSU5IPxGigotjSI7TrQX4PhbMAd9pjiEijfU8KFG00eeSZBX5NIzXS2dxqYQVqRJhuh0bWrMzP5OyNNdydQg6drMRDAib0fcpy7WSfObEZBgbEVpEflb0UQvgop2AVCavEihJWZCVzfBOJZCrbE7ZAri0xXPjPJFPY0o6gqG7nLy7ROxp');
 			
 			$ucount = 0;
 
 			try {
-
-				echo "step 1 \n";
 
 			  	$request = new FacebookRequest(
 				$session,
@@ -34,17 +32,10 @@ use Facebook\FacebookCanvasLoginHelper;
   				'/me/notifications'
 				);
 
-			  	echo "step 2 \n";
-
 				$response = $request->execute();
 				$graphObject = $response->getGraphObject();
 
 				$ucount = $graphObject->getProperty('summary')->getProperty('unseen_count');
-				$sum = $graphObject->getProperty('summary')->getPropertyNames();
-				foreach ($sum as $key) {
-					echo $key."\n";
-				}
-				echo "Notifications non lues : ".$graphObject->getProperty('summary')->getProperty('unseen_count')."\n";
 
 			} catch (FacebookRequestException $e) {
 			  $error = $e->getMessage()."\n";

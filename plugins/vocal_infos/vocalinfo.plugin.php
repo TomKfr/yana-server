@@ -350,6 +350,7 @@ function vocalinfo_action(){
 			global $_;
 
 			$ucount = 0;
+			$error;
 
 			FacebookSession::setDefaultApplication('944393428906526','3c360d7d962d47fccd2d84dcb2c10273');
 
@@ -358,7 +359,7 @@ function vocalinfo_action(){
 			//   FacebookCanvasLoginHelper
 			//   FacebookJavaScriptLoginHelper
 			// or create a FacebookSession with a valid access token:
-			$session = new FacebookSession('CAANa67rbsh4BAKPG5zbjbxhGpb80bKTJ1nYDChZAoveOI56y7ZBwRDDT2qBEY9CanZCnMmZCIrA6nZB5bwrGVImCr7OmJHoq8u8fEOsJT2p8KOtqZBn4fysLLSFtRjQvhTdCYZCYFZBdKhuw35PCcwS7gHqeiQcUK0nKfybQj3n5MdSdN4xzdZCo9ZAb5MNvHmxt3bArOnZC2uk5K0rVZAA5OZCl4');
+			$session = new FacebookSession('CAANa67rbsh4BAGpi7lsldHmrDT4vk50PYOa9hSU5IPxGigotjSI7TrQX4PhbMAd9pjiEijfU8KFG00eeSZBX5NIzXS2dxqYQVqRJhuh0bWrMzP5OyNNdydQg6drMRDAib0fcpy7WSfObEZBgbEVpEflb0UQvgop2AVCavEihJWZCVzfBOJZCrbE7ZAri0xXPjPJFPY0o6gqG7nLy7ROxp');
 			
 
 			// Get the GraphUser object for the current user:
@@ -376,12 +377,13 @@ function vocalinfo_action(){
 				$ucount = $graphObject->getProperty('summary')->getProperty('unseen_count');
 
 			} catch (FacebookRequestException $e) {
-			  $sentence = $e->getMessage()."\n";
+			  $error = $e->getMessage()."\n";
 			} catch (\Exception $e) {
-			  $sentence = "Erreur inconnue";
+			  $error = "Erreur inconnue";
 			}
 
 			$sentence = "Vous avez ".intval($ucount)." notifications non lues.";
+			if(isset($error)) $sentence = $error;
 
 			$response = array('responses'=>array(
 									array('type'=>'talk','sentence'=>$sentence)
