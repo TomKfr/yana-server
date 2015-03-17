@@ -374,7 +374,9 @@ function vocalinfo_action(){
 				$response = $request->execute();
 				$graphObject = $response->getGraphObject();
 
-				$ucount = $graphObject->getProperty('summary')->getProperty('unseen_count');
+				$tmp = $graphObject->getProperty('summary');
+				if(isset($tmp)) $ucount = $tmp->getProperty('unseen_count');
+				else $ucount = 0;
 
 			} catch (FacebookRequestException $e) {
 			  $error = $e->getMessage()."\n";
